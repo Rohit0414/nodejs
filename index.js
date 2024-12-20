@@ -113,19 +113,19 @@ const dataSchema = new mongoose.Schema({
    }
  });
  
- app.patch('/data/:id', async (req, res) => {
-   try {
-     const dataID = req.params.id;
-     const data = req.body;
-     const filter = { _id: dataID }; 
-     const update = { $set: data };
-     const edit = await Data.updateOne(filter, update);
-     res.json(edit);
-   } catch (err) {
-     console.error(err);
-     res.status(500).json({ message: 'Error updating data' });
-   }
- });
+//  app.patch('/data/:id', async (req, res) => {
+//    try {
+//      const dataID = req.params.id;
+//      const data = req.body;
+//      const filter = { _id: dataID }; 
+//      const update = { $set: data };
+//      const edit = await Data.updateOne(filter, update);
+//      res.json(edit);
+//    } catch (err) {
+//      console.error(err);
+//      res.status(500).json({ message: 'Error updating data' });
+//    }
+//  });
  
  app.post('/data', async (req, res) => {
    try {
